@@ -10,9 +10,13 @@ efficient tooling and cleanest project structure.
 
 - [**CLI Commands**](commands.md)
 - [Tool Configuration](files.md)
-- [Server Configurations](server-configs.md)
-- [Deployment](deployment.md) *(currently Heroku specific)*
+- Deployment
+-- [`Heroku`]
+-- [`AWS S3`]
 - [FAQ](faq.md)
+
+[`Heroku`]: ./deployment/heroku.md
+[`AWS S3`]: ./deployment/aws.md
 
 # Feature overview
 
