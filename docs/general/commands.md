@@ -59,11 +59,6 @@ npm run build
 
 Preps your app for deployment (does not run tests). Optimizes and minifies all files, piping them to `build` folder.
 
-## Testing
-
-See [testing documentation](../testing/README.md) for detailed information
-about our testing setup!
-
 ## Unit testing
 
 ```Shell
