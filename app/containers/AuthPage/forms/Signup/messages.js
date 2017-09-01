@@ -9,8 +9,13 @@ export default defineMessages({
     id: 'app.containers.AuthPage.signup.startTip',
     defaultMessage: 'We are glad to see you!',
   },
+  name: {
+    id: 'app.containers.AuthPage.signup.name',
+    defaultMessage: 'Name',
+  },
+
   repeatPassword: {
     id: 'app.containers.AuthPage.signup.repeatPassword',
-    defaultMessage: 'Repeat password',
+    defaultMessage: 'Reenter password',
   },
 });

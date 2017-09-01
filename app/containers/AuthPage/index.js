@@ -44,7 +44,6 @@ export class AuthPage extends React.Component { // eslint-disable-line react/pre
           <meta name='description' content='Description of AuthPage' />
         </Helmet>
         <Card className='auth-card'>
-          {console.dir(this.props)}
           {LoginForm(isLogin, this.toggleForm.bind(this))}
           {SignupForm(isSignup, this.toggleForm.bind(this))}
         </Card>

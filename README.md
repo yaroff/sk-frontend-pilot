@@ -1,3 +1,8 @@
+For start 
+```Shell
+yarn && yarn start
+```
+
 - [Overview](docs/general): A short overview of included tools
 - [**Commands**](docs/general/commands.md): Getting most out of this boilerplate
 

@@ -17,6 +17,14 @@ function SignupForm(isShouldRender, toggleForm) {
       <TextField
         id='auth-email-input'
         className='auth-signup-email-input'
+        label={<FormattedMessage {...messages.name} />}
+        InputProps={{ placeholder: messages.name.defaultMessage }}
+        fullWidth
+        margin='normal'
+      />
+      <TextField
+        id='auth-email-input'
+        className='auth-signup-email-input'
         label={<FormattedMessage {...authMessages.email} />}
         InputProps={{ placeholder: authMessages.email.defaultMessage }}
         fullWidth

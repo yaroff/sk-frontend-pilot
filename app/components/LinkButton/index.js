@@ -15,7 +15,7 @@ class LinkButton extends React.PureComponent { // eslint-disable-line react/pref
           sign update
         </Button>
       </Link>
-    );
+    )
   }
 }
 

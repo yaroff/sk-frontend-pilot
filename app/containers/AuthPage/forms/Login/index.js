@@ -12,12 +12,11 @@ function LoginForm(isShouldRender, toggleForm) {
   if (!isShouldRender){return null;}
   return (
     <div className='auth-login-form'>
-      {console.dir(this)}
       <h3> <FormattedMessage {...messages.header} /> </h3>
       <span> <FormattedMessage {...messages.startTip} /> </span>
       <TextField
         id='auth-login-email-input'
-        className=''
+        className='auth-login-email-input'
         label={<FormattedMessage {...authMessages.email} />}
         InputProps={{ placeholder: authMessages.email.defaultMessage }}
         fullWidth
@@ -25,7 +24,7 @@ function LoginForm(isShouldRender, toggleForm) {
       />
       <TextField
         id='auth-login-password-input'
-        className=''
+        className='auth-login-password-input'
         label={<FormattedMessage {...authMessages.password} />}
         InputProps={{ placeholder: authMessages.password.defaultMessage }}
         fullWidth
