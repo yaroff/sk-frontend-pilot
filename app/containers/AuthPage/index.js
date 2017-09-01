@@ -6,19 +6,37 @@ import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 import Card from 'material-ui/Card';
-import Button from 'material-ui/Button';
-import TextField from 'material-ui/TextField';
-
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
+
 import makeSelectAuthPage from './selectors';
 import reducer from './reducer';
 import saga from './saga';
-import messages from './messages';
+import LoginForm from './forms/Login/';
+import SignupForm from './forms/Signup/';
 import './styles/auth.css';
 
 export class AuthPage extends React.Component { // eslint-disable-line react/prefer-stateless-function
+  constructor(props) {
+    super(props);
+    function isCurrentRoute(route){
+      return props.location.pathname.indexOf(route) !== -1;
+    }
+    this.state = {
+      isSignup: isCurrentRoute('signup'),
+      isLogin: isCurrentRoute('login'),
+    };
+  };
+
+  toggleForm() {
+    this.setState({
+      isSignup: !this.state.isSignup,
+      isLogin: !this.state.isLogin,
+    });
+  }
+
   render() {
+    const { isLogin, isSignup } = this.state;
     return (
       <div className='auth-wrapper'>
         <Helmet>
@@ -26,36 +44,19 @@ export class AuthPage extends React.Component { // eslint-disable-line react/pre
           <meta name='description' content='Description of AuthPage' />
         </Helmet>
         <Card className='auth-card'>
-          <h3> <FormattedMessage {...messages.header} /> </h3>
-          <span> <FormattedMessage {...messages.startTip} /> </span>
-
-          <TextField
-            id='auth-email-input'
-            className=''
-            label={<FormattedMessage {...messages.email} />}
-            InputProps={{ placeholder: messages.email.defaultMessage }}
-            fullWidth
-            margin='normal'
-          />
-          <TextField
-            id='auth-password-input'
-            className=''
-            label={<FormattedMessage {...messages.password} />}
-            InputProps={{ placeholder: messages.password.defaultMessage }}
-            fullWidth
-            margin='normal'
-          />
-          <div className='auth-buttons-wrapper'>
-            <Button className='auth-signup-button'>Sign up</Button>
-            <Button raised color='primary' className='auth-login-button'>
-              Login
-            </Button>
-          </div>
+          {console.dir(this.props)}
+          {LoginForm(isLogin, this.toggleForm.bind(this))}
+          {SignupForm(isSignup, this.toggleForm.bind(this))}
         </Card>
       </div>
     );
   }
 }
+//
+// AuthPage.getInitialState = {
+//   isSignup: !!this.props.location.indexOf('signup'),
+//   isLogin: !!this.props.location.pathname.indexOf('login') || this.props.location.pathname === '/',
+// };
 
 AuthPage.propTypes = {
   dispatch: PropTypes.func.isRequired,

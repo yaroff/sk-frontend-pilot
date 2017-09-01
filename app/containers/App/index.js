@@ -12,19 +12,28 @@
  */
 
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
-import AuthPage from 'containers/AuthPage/index';
+import AuthPage from 'containers/AuthPage/';
+import SignupPage from 'containers/AuthPage/';
 
 import './main.css';
 
 export default function App() {
+  const loggedIn = false;
   return (
     <div>
       <Switch>
-        <Route exact path="/auth" component={AuthPage} />
+        <Route path="/auth/login" component={AuthPage} />
+        <Route path="/auth/signup" component={SignupPage} />
         <Route exact path="/404" component={NotFoundPage} />
-        <Route path="/" component={AuthPage} />
+        <Route push path="/" render={() => (
+          loggedIn ? (
+            <Redirect to="/dashboard"/>
+          ) : (
+            <Redirect to="/auth/login"/>
+          )
+        )}/>
       </Switch>
     </div>
   );

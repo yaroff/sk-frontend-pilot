@@ -10,8 +10,6 @@
     "npm": ">=3",
     "node": ">=5"
   },
-  "author": "Max Stoiber",
-  "license": "MIT",
   "scripts": {
     "analyze:clean": "rimraf stats.json",
     "preanalyze": "npm run analyze:clean",
@@ -175,8 +173,7 @@
       "cross-env",
       "express",
       "ip",
-      "minimist",
-      "sanitize.css"
+      "minimist"
     ],
     "include": [
       "core-js",
@@ -241,8 +238,8 @@
     "redux": "3.6.0",
     "redux-immutable": "4.0.0",
     "redux-saga": "0.15.3",
+    "redux-socket.io": "^1.4.0",
     "reselect": "3.0.1",
-    "sanitize.css": "4.1.0",
     "socket.io-client": "^2.0.3",
     "styled-components": "2.0.0",
     "warning": "3.0.0",

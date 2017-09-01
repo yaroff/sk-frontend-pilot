@@ -14,6 +14,9 @@
   padding: 10px;
   padding-top: 0px;
 }
+.auth-card>div {
+  width: 340px;
+}
 
 .auth-buttons-wrapper {
   display: flex;
